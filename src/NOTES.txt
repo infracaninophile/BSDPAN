@@ -40,5 +40,24 @@
       currently files, sym-links, multiply linked files are all listed
       under 'files' -- relies on tar dtrt.
 
+      'categories' is pretty arbitrary: traditional use is ports
+      specific.  I'm just going to use 'cpan' for BSDPAN stuff.
+
+      'origin' is also pretty ports specific -- the category/port
+      diectory name relative to $PORTSDIR.  For BSDPAN use I'm
+      thinking the CPAN URL would be the best equivalent, FFR -> a
+      module to allow pkg to check on CPAN for any upgrades and apply
+      them as required.
+
+   Eg.
+
+   "origin" : "http://search.cpan.org/~nlnetlabs/Net-DNS-0.75/"
+
+   The euivalent "www" setting should be
+
+   "www" : "http://search.cpan.org/~nlnetlabs/Net-DNS-0.75/lib/Net/DNS.pm"
+
+   ie. the primary docco for the module.
+
 
 
