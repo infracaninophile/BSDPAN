@@ -10,3 +10,35 @@
 
    Code assumes presence of a ports tree -- prefer 'pkg rquery' 
 
+========================================================================
+
+   To create pkg(8) packages simply write a manifest into a working
+   directory (something temporary), then feed the directory name to
+
+      pkg register -m dirname    (to register as an installed pkg)
+
+   or 
+
+      pkg create -m dirname      (to create a pkg tarball)
+
+   (Aside: you can say "pkg register -M ./+MANIFEST" <--- this should
+    be taught to understand "pkg register -M -" to mean 'read from stdin'
+
+    However you can't say "pkg create -M ./+MANIFEST" which seems
+    pretty arbitrary.)
+
+   When creating a manifest:
+
+      output in UCL format is pretty forgiving for machine handling.
+
+      you don't need to fill in the checksums for each file: pkg(8) will
+      calculate the checksums itself
+
+      similarly, you don't need to fill in shlibs provided/required,
+      as those are automatic too.
+
+      currently files, sym-links, multiply linked files are all listed
+      under 'files' -- relies on tar dtrt.
+
+
+
