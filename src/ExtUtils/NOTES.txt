@@ -1,0 +1,12 @@
+
+   -- MakeMaker.pm
+
+      Find dependency ports, check what is installed, choose between
+      p5- and bsdpan- alternates
+
+   -- Packlist.pm
+
+      Write out the module manifest as required by ports.
+
+   Code assumes presence of a ports tree -- prefer 'pkg rquery' 
+
